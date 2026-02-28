@@ -1,0 +1,65 @@
+.auth-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: linear-gradient(160deg, #f7f6f2 0%, #e8f5e0 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+}
+
+.auth-header {
+  margin-bottom: 28px;
+}
+
+.auth-logo {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 24px;
+}
+
+.auth-header h1 {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.auth-header p {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+.auth-switch a {
+  color: var(--accent);
+  font-weight: 500;
+}
+.auth-switch a:hover { text-decoration: underline; }
+
+.role-preview {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+.role-preview.authority { background: #fef9c3; color: #854d0e; }
+.role-preview.citizen { background: var(--accent-pale); color: var(--accent); }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 28px 20px; }
+}

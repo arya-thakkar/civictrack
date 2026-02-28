@@ -1,0 +1,107 @@
+.report-page { padding-bottom: 60px; }
+
+.report-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: start;
+}
+
+.report-form { padding: 36px; }
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.coords-text {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.image-upload-area {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  overflow: hidden;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-upload-area:hover { border-color: var(--accent); background: var(--accent-pale); }
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 24px;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.upload-icon { font-size: 2rem; }
+.upload-hint { font-size: 0.75rem; color: var(--ink-light); }
+
+.image-preview {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.tips-card {
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.tips-card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.tips-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tips-card ul li {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  padding-left: 16px;
+  position: relative;
+}
+.tips-card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+.tips-card p { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .report-layout { grid-template-columns: 1fr; }
+  .report-tips { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tips-card { margin-bottom: 0; }
+}
+
+@media (max-width: 640px) {
+  .report-form { padding: 20px; }
+  .report-tips { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column-reverse; }
+  .form-actions .btn { width: 100%; justify-content: center; }
+}
