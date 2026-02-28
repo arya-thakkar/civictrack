@@ -13,7 +13,7 @@ http.globalAgent.maxSockets = Infinity;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://civictrack-frontend.vercel.app"],
+    origin: ["http://localhost:3000", "https://civictrack-kn24.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
