@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const multer = require("multer");
-const path = require("path");
 const { protect, authorityOnly } = require("../middleware/authMiddleware");
+const { upload } = require("../config/cloudinary");
 const {
   getStats,
   createIssue,
@@ -12,19 +11,6 @@ const {
   updateStatus,
 } = require("../controllers/issueController");
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/"),
-  filename: (req, file, cb) =>
-    cb(null, Date.now() + path.extname(file.originalname)),
-});
-const upload = multer({ storage, limits: { fileSize: 5 * 1024 * 1024 } });
-
-const fs = require("fs");
-if (process.env.NODE_ENV !== "production") {
-  if (!fs.existsSync("uploads")) {
-    fs.mkdirSync("uploads");
-  }
-}
 router.get("/stats", getStats);
 router.get("/all", protect, getAllIssues);
 router.get("/my", protect, getMyIssues);
