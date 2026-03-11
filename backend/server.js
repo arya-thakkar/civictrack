@@ -12,7 +12,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    process.env.FRONTEND_URL || 'https://civictrack-frontend.vercel.app'
+    process.env.FRONTEND_URL || 'http://civictrack-lf6n.vercel.app/'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
