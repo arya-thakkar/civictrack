@@ -19,7 +19,7 @@ const Login = () => {
     if (!form.email || !form.password) return setError('All fields are required.');
     setLoading(true);
     try {
-      const { data } = await api.post('/auth/login', form);
+      const { data } = await api.post('login', form);
       login(data.user, data.token);
       navigate(data.user.role === 'authority' ? '/authority' : '/dashboard');
     } catch (err) {

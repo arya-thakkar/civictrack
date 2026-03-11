@@ -28,7 +28,7 @@ const Signup = () => {
     if (form.password.length < 6) return setError('Password must be at least 6 characters.');
     setLoading(true);
     try {
-      const { data } = await api.post('/auth/signup', form);
+      const { data } = await api.post('/signup', form);
       login(data.user, data.token);
       navigate(data.user.role === 'authority' ? '/authority' : '/dashboard');
     } catch (err) {
